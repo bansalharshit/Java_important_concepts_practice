@@ -1,0 +1,264 @@
+Java Theory Based Question 
+==============================
+1. What is Java?
+Answer 1. Java is the high-level, object-oriented, robust, secure programming language, platform-independent, high performance, Multithreaded, and portable programming language. It was developed by James Gosling in June 1991. It can also be known as the platform as it provides its own JRE and API.
+
+features of java programming language
+=====================================
+1.Simple: Java is easy to learn. The syntax of Java is based on C++ which makes easier to write the program in it.
+
+2.Object-Oriented: Java follows the object-oriented paradigm which allows us to maintain our code as the combination of different type of objects that incorporates both data and behavior.
+
+3. Portable: Java supports read-once-write-anywhere approach. We can execute the Java program on every machine. Java program (.java) is converted to bytecode (.class) which can be easily run on every machine.
+
+4. Platform Independent: Java is a platform independent programming language. It is different from other programming languages like C and C++ which needs a platform to be executed. Java comes with its platform on which its code is executed. Java doesn't depend upon the operating system to be executed.
+
+5. Secured: Java is secured because it doesn't use explicit pointers. Java also provides the concept of ByteCode and Exception handling which makes it more secured.
+
+6. Robust: Java is a strong programming language as it uses strong memory management. The concepts like Automatic garbage collection, Exception handling, etc. make it more robust.
+
+7. Multithreaded: We can write Java programs that deal with many tasks at once by defining multiple threads. The main advantage of multi-threading is that it doesn't occupy memory for each thread. It shares a common memory area. Threads are important for multi-media, Web applications, etc.
+
+1A What is the Difference Between JDK, JRE and JVM?
+Answer 1A 
+JVM
+======>Java Virtual Machine is a virtual machine that enables the computer to run the Java program. JVM acts like a run-time engine which calls the main method present in the Java code. JVM is the specification which must be implemented in the computer system. The Java code is compiled by JVM to be a Bytecode which is machine independent and close to the native code.
+
+JRE
+======>JRE stands for Java Runtime Environment. It is the implementation of JVM. The Java Runtime Environment is a set of software tools which are used for developing Java applications. It is used to provide the runtime environment. It is the implementation of JVM. It physically exists. It contains a set of libraries + other files that JVM uses at runtime.
+
+JDK
+=======>JDK is an acronym for Java Development Kit. It is a software development environment which is used to develop Java applications and applets. It physically exists. It contains JRE + development tools. JDK is an implementation of any one of the below given Java Platforms released by Oracle Corporation:
+
+a.Standard Edition Java Platform
+b.Enterprise Edition Java Platform
+c.Micro Edition Java Platform
+
+2. Version of Java?
+
+
+Anser 2 As of September 2022, Java 19 is the latest released Java version. In March 2023, Java 20 will follow. The last long-term support version (LTS) of Java is Java 17, released in September 2021.
+
+2a. Why are companies still stuck with Java 8?
+answer 2a. Build tools (Maven, Gradle etc.) and some libraries initially had bugs with versions Java versions > 8 and needed updates
+Some companies have policies to only use LTS versions and rely on their OS vendors to provide them these builds, which takes time.
+ until Java 8 you were pretty much using Oracle’s JDK builds and you did not have to care about licensing. Oracle changed the licensing scheme In 2019,
+
+
+3. What is string?
+Answer 3. In Java, string is basically an object that represents sequence of char values. An array of characters works same as Java string. For example:
+char[] ch={'j','a','v','a','t','p','o','i','n','t'};  
+String s=new String(ch);  
+
+String s="javatpoint";  
+Java String class provides a lot of methods to perform operations on strings such as compare(), concat(), equals(), split(), length(), replace(), compareTo(), intern(), substring() etc.
+
+4. Why String are immutable?
+Answer 4.  The String is immutable in Java because of the security, synchronization and concurrency, caching, and class loading. The reason of making string final is to destroy the immutability and to not allow others to extend it.But we can only change the reference to the object.
+
+for example:
+import java.util.*;  
+class ImmutableString{    
+    public static void main(String args[]){    
+        String NewString = "Hello";    
+        NewString.concat("World");  
+        System.out.println(NewString);    
+    }    
+} 
+output:-> Hello
+
+import java.util.*;  
+class ImmutableString{    
+    public static void main(String args[]){    
+        String NewString = "Hello";    
+        NewString = NewString.concat("World");  
+        System.out.println(NewString);    
+    }    
+}   
+
+output:-> HelloWorld
+
+5. can we override the static Method?
+Anser 5.No, we can not override the static Method because method overriding is based on dynamic binding at runtime and the static methods are bonded using static binding at compile time. So, we cannot override static methods.
+
+5a. what is static Method
+answer5a. The method that has a static keyword before the method name is known as a static method. It is also known as a class-level method. A copy of the static method is shared by all the objects of the class.The static method cannot access instance variables or methods.
+
+6. any five method of string?
+Answer 6.comapre(),concat(),equals(),split(),length(),replace(),compareTo(),substring().
+
+7. difference between String Buffer and String builder?
+Answer7. 
+String Buffer:
+========================
+
+1.StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously.
+2.StringBuffer is less efficient than StringBuilder.
+3.StringBuffer was introduced in Java 1.0
+
+String Builder
+==================>
+1.StringBuffer was introduced in Java 1.5
+2.StringBuilder is non-synchronized i.e. not thread safe. It means two threads can call the methods of StringBuilder simultaneously.
+3.StringBuilder is more efficient than StringBuffer.
+
+Example Of StringBuffer
+=========================
+public class BufferTest{
+public static void main(String[] args){
+StringBuffer buffer=new StringBuffer("Hello");
+buffer.append("java");
+System.out.println(buffer);
+}
+}
+output: hellojava
+
+Example of StringBuilder
+============================
+public class BufferTest{
+public static void main(String[] args){
+StringBuilder builder=new StringBuilder("Hello");
+builder.append("Java");
+}
+}
+output: HelloJava
+
+8. Stack Memory vs Heap Memory?
+Answer 8. The major difference between Stack memory and heap memory is that the stack is used to store the order of method execution and local variables while the heap memory stores the objects and it uses dynamic memory allocation and deallocation. 
+
+StackMemory
+=============
+1.Application:	It stores items that have a very short life such as methods, variables, and reference variables of the objects.
+2. Ordering: it follows the LIFO order.
+3. Efficiency: it has faster access,allocation,and deallocation.
+4. MemorySize: it is smaller in size;
+5. Visibility of Scope: The Variable are visible only to the owner thread.
+6. Generation of Space: When a thread is created, the operating system automatically allocates the stack.
+7.Allocation/Deallocation: it is done automatically by the compiler.
+8. Thread-safety: it is thread-safe because each thread has its own stack.
+9.Exception Throws: Jvm throws the java.lang.StackOverFlowError(if stack size is greater than limit)
+
+HeapMemory/HeapSapce
+======================
+1.Application:	It stores Ojects and java Runtime Environment (JRE) classes.
+2. Ordering: it does not follow any order because it is a dynamic memory allocation
+3. Efficiency: it has slower access,allocation,and deallocation.
+4. MemorySize: it is larger in size;
+5. Visibility of Scope: The Variable are visible to all thread.
+6. Generation of Space:To create the heap space for the application, the language first calls the operating system at run time.
+7.Allocation/Deallocation: It is done manually by the programmer.
+8. Thread-safety: It is not thread-safe, so properly synchronization of code is required.
+9.Exception Throws: Jvm throws the java.lang.OutOfMemoryError(if the jvm is unable to create a new native method);
+
+9. what is String Pool?
+
+Anser9. String pool is nothing but a storage area in Java heap where string literals stores. It is also known as String Intern Pool or String Constant Pool.
+
+Whenever we create a string the string object occupies some space in the heap memory. Creating a number of strings may increase the cost and memory too which may reduce the performance also.
+
+When we create a string literal, the JVM first check that literal in the String pool. If the literal is already present in the pool, it returns a reference to the pooled instance. If the literal is not present in the pool, a new String object takes place in the String pool.
+
+10. final finally finalize
+Answer 10. The final, finally, and finalize are keywords in Java.The basic difference between final, finally and finalize is that the final is an access modifier, finally is the block in Exception Handling and finalize is the method of object class.
+
+final
+========
+1.Definition:-->final is the keyword and access modifier which is used to apply restrictions on a class, method or variable.
+2.Application to:-->Final keyword is used with the classes, methods and variables.
+3.Functionality:---->1) Once declared, final variable becomes constant and cannot be modified.
+(2) final method cannot be overridden by sub class.
+(3) final class cannot be inherited.
+4. Execution:-->Final method is executed only when we call it.
+
+Finally
+=========>
+1.Definition:-->finally is the block in Java Exception Handling to execute the important code whether the exception occurs or not.
+2.Application to:-->Finally block is always related to the try and catch block in exception handling
+3.Functionality:---->(1) finally block runs the important code even if exception occurs or not.
+(2) finally block cleans up all the resources used in try block
+4. Execution:-->Finally block is executed as soon as the try-catch block is executed.
+It's execution is not dependant on the exception
+
+Finalize
+================>
+1.Definition:-->finalize is the method in Java which is used to perform clean up processing just before object is garbage collected.
+2.Application to:-->finalize() method is used with the objects
+3.Functionality:---->(1) finalize method performs the cleaning activities with respect to the object before its destruction.
+
+4. Execution:-->finalize method is executed just before the object is destroyed
+
+11. what is method overloading and method overriding?
+
+12. What is Abstraction?
+
+13. What is Encapsulation?
+14. What is Enum?
+15. what is polymorphism?
+16. what is super keyword?
+17. what is constructor?
+18. what is this keyword?
+19. what is checked and unchecked exception?
+20. Differece Between Equals and == method?
+21. What is Orm?
+22. what is jdbc?
+23. what is hibernate?
+24. what is spring?
+25. what is spring boot?
+26. what is @component scan?
+27. What is AutoWiring?
+28. What is xmL file?
+29. what is dependency injection?
+30. what is IOC container?
+31. what is bean?
+32. what are pojos class?
+33. what is spring mvc archetecture?
+34. difference between comparator and comparable?
+35. explain application.properties file?
+36. what is restTemplate ?
+37. what is an Api?
+38. explain the internal working of hashmap?
+39. what is @service annotation, @repository ?
+40. how the exception handling works in spring boot?
+41. what is spring security?
+42. what is an aws?
+43. what is swagger?
+44. whai is postman?
+45. what is client server model?
+46. how many ways are there to create Spring boot Application?
+47. What is DBMS?
+48. What is RDBMS?
+49. what is normalization?
+50. Acid Properties in DBMS?
+51. Spring Version and which version are you currently using?
+52. what is pom.xml file?
+53. What is RestApi?
+54. All the Dependencies In Pom.xml File and its uses?
+55. What is serialization and decerialization?
+56. What is Thread?
+57. What is MultiThreading?
+58. life cycle of multithreading?
+59. Expalin the Hiriericy of Collections?
+60. What is colelctions framework?
+61. What is the Differnce Between Array and ArrayList?
+62. What is Set?
+63. What is Treeset and hashset?
+64. What is an stack and queue datastructrue?
+65. what is an array?
+66. what is an linked list?
+
+2. DSA Question Asked in interview
+======================================
+1. Prime Number Program- all types
+2. reverse words in String
+3. palindrome program 
+4. longest palindrom substring
+5. valid parenthesis
+6. two sum 
+7. valid palindrome
+8. fibonachi series 
+9. factorial 
+10.bubble sort and selection sort 
+11. remove duplicates from array
+12. merge two sorted array
+13. reverse a number 
+14. add two numbers 
