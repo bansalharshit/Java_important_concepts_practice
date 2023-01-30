@@ -1,7 +1,7 @@
 Java Theory Based Question 
 ==============================
 1. What is Java?
-Answer 1. Java is the high-level, object-oriented, robust, secure programming language, platform-independent, high performance, Multithreaded, and portable programming language. It was developed by James Gosling in June 1991. It can also be known as the platform as it provides its own JRE and API.
+Answer 1. Java is the high-level, object-oriented, robust, secure programming language, platform-independent, high performance, Multithreaded, and portable programming language. It was developed by James Gosling in may 1995. It can also be known as the platform as it provides its own JRE and API.
 
 features of java programming language
 =====================================
@@ -25,7 +25,7 @@ JVM
 ======>Java Virtual Machine is a virtual machine that enables the computer to run the Java program. JVM acts like a run-time engine which calls the main method present in the Java code. JVM is the specification which must be implemented in the computer system. The Java code is compiled by JVM to be a Bytecode which is machine independent and close to the native code.
 
 JRE
-======>JRE stands for Java Runtime Environment. It is the implementation of JVM. The Java Runtime Environment is a set of software tools which are used for developing Java applications. It is used to provide the runtime environment. It is the implementation of JVM. It physically exists. It contains a set of libraries + other files that JVM uses at runtime.
+======>JRE stands for Java Runtime Environment. It is the implementation of JVM. The Java Runtime Environment is a set of software tools which are used for developing Java applications. It is used to provide the runtime environment.It physically exists. It contains a set of libraries + other files that JVM uses at runtime.
 
 JDK
 =======>JDK is an acronym for Java Development Kit. It is a software development environment which is used to develop Java applications and applets. It physically exists. It contains JRE + development tools. JDK is an implementation of any one of the below given Java Platforms released by Oracle Corporation:
@@ -35,7 +35,6 @@ b.Enterprise Edition Java Platform
 c.Micro Edition Java Platform
 
 2. Version of Java?
-
 
 Anser 2 As of September 2022, Java 19 is the latest released Java version. In March 2023, Java 20 will follow. The last long-term support version (LTS) of Java is Java 17, released in September 2021.
 
@@ -84,13 +83,16 @@ Anser 5.No, we can not override the static Method because method overriding is b
 5a. what is static Method
 answer5a. The method that has a static keyword before the method name is known as a static method. It is also known as a class-level method. A copy of the static method is shared by all the objects of the class.The static method cannot access instance variables or methods.
 
+5b. why static method can not call the non-static method or non-static  variable?
+answer 5b. A non-static method is dependent on the object. It is recognized by the program once the object is created. But a static method can be called before the object creation. Hence you cannot make the reference.
+
 6. any five method of string?
 Answer 6.comapre(),concat(),equals(),split(),length(),replace(),compareTo(),substring().
 
-7. difference between String Buffer and String builder?
+7. Difference between String Buffer and String Builder?
 Answer7. 
 String Buffer:
-========================
+==================> 
 
 1.StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously.
 2.StringBuffer is less efficient than StringBuilder.
@@ -187,11 +189,94 @@ Finalize
 
 4. Execution:-->finalize method is executed just before the object is destroyed
 
+10a. what is garbage collection in java?
+answer 10a.Garbage Collection is a process to destrory the unused objects due to which java provides better memory management.
+
+Advantage of Garbage Collection
+===================================
+1. it makes java memory efficeint because garbage collector removes the unreferenced objects from the heap memory.
+2. it is automatically done by the garbage collector(a part of jvm) so we don't need to make extra efforts.
+
+Note: the garbage collector of jvm collects only those objects that are created by new keywords .so if you have created any object without new keyword you can use finalize mehtod to perform cleanup processing(destroying remaining objects)
+
+gc() Method
+==============
+The gc() method is used to invoke the garbage collector to perform cleanup processing . the gc() is found in System and runtime classes.
+ 
 11. what is method overloading and method overriding?
+Answer 11.
+Method overLoading
+=====================>
+If a class has multiple methods having same name but different in parameters, it is known as Method Overloading.
+
+Method overloading increases the readability of the program.
+There are two ways to overload the method in java
+
+1.By changing number of arguments
+2.By changing the data type
+
+Method Overriding
+===================>
+If subclass (child class) has the same method as declared in the parent class, it is known as method overriding in Java.
+
+Method overriding is used to provide the specific implementation of a method which is already provided by its superclass.
+Method overriding is used for runtime polymorphism
+
+Rules for Java Method Overriding
+1. The Method must have the same name as in the parent class.
+2. The method must have the same parameter as in the parent class.
+3. there must be an is-a relationshi(inheritance)
+
+11a.Why Method Overloading is not possible by changing the return type of method only?
+Answer 11a. Because of Ambiguity.
+class Adder{
+static int add(int a,int b){return a+b};
+static double add(int a,int b){return a+b};
+}
+class TestOverloading{
+public static void main(String[] args){
+System.out.println(Adder.add(11,12));// ambiguity
+}
+}
+
+11B can we overload java main() method?
+Answer 11b. Yes, by method overloading. You can have any number of main methods in a class by method overloading. But JVM calls main() method which receives string array as arguments only. Let's see the simple example:
+class TestOverloading4{  
+public static void main(String[] args){
+System.out.println("main with String[]")
+}
+  
+public static void main(String args){
+System.out.println("main with String")
+}
+  
+public static void main(){
+System.out.println("main without args")
+}  
+}  
 
 12. What is Abstraction?
+Answer 12. Abstraction is a process of hiding the implementation details and showing only functionality to the user.
+Ways to achieve Abstraction
+=============================
+1. Abstract class(0 to 100%)
+2. Interface(100%)
 
-13. What is Encapsulation?
+Abstract class
+================> A class which is declared as abstract is known as an abstract class. It can have abstract and non-abstract methods. It needs to be extended and its method implemented. It cannot be instantiated.It can have constructors and static methods also.It can have final methods which will force the subclass not to change the body of the method.
+
+Abstract Method
+==================>A method which is declared as abstract and does not have implementation is known as an abstract method.
+
+for example : abstract void printStatus();//no method body and abstract 
+
+13. What is Encapsulation and inheritance?
+Answser 13. 
+Inheritance
+=============>Inheritance in Java is a mechanism in which one object acquires all the properties and behaviors of a parent object.
+
+Note: Inheritance represents the IS-A relationship which is also known as a parent-child relationship.
+
 14. What is Enum?
 15. what is polymorphism?
 16. what is super keyword?
