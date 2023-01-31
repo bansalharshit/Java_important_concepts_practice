@@ -277,11 +277,262 @@ Inheritance
 
 Note: Inheritance represents the IS-A relationship which is also known as a parent-child relationship.
 
+why we use inheritance
+=========================
+1. For method Overriding (so runtime Polymorphism can be achieved).
+2. for Code Reusability.
+
+Note: extends--> the meaning of extends is to increase the functionality.
+
+Types of Inheritance in java
+===============================>
+on the class level: single multilevel and hierarchical
+on the interface level: mulitple and hybrid
+
+why multiple inheritance is not supported in java?
+answer to reduce the complexity and simplify the language , mulitple inheritance is not supported in java.in short ambiguity problem will arise.
+
+for example:
+=============
+class A{  
+void msg(){System.out.println("Hello");}  
+}  
+class B{  
+void msg(){System.out.println("Welcome");}  
+}  
+class C extends A,B{//suppose if it were  
+   
+ public static void main(String args[]){  
+   C obj=new C();  
+   obj.msg();//Now which msg() method would be invoked?  
+}  
+} 
+output: compile time error
+
+Encapsulation
+++++++++++++++++>Encapsulation in Java is a process of wrapping code and data together into a single unit, for example, a capsule which is mixed of several medicines.
+
+We can create a fully encapsulated class in Java by making all the data members of the class private. Now we can use setter and getter methods to set and get the data in it.
+
+The Java Bean class is the example of a fully encapsulated class.
+
+Advantage of Encapsulation
+===========================>
+1. way to achieve "Data Hiding" in java because other class will not be able to access the data through the private data members.
+ 2. the encapsulate class is eays to test. so it is better in unit testing.
+
+//A Java class which is a fully encapsulated class.  
+//It has a private data member and getter and setter methods.  
+package com.javatpoint;  
+public class Student{  
+//private data member  
+private String name;  
+//getter method for name  
+public String getName(){  
+return name;  
+}  
+//setter method for name  
+public void setName(String name){  
+this.name=name  
+}  
+}  
+
+package com.javatpoint;  
+class Test{  
+public static void main(String[] args){  
+//creating instance of the encapsulated class  
+Student s=new Student();  
+//setting value in the name member  
+s.setName("vijay");  
+//getting value of the name member  
+System.out.println(s.getName());  
+}  
+} 
+
+output: vijay
+note: comile by javac Test.java
+runby:java com.javapoint.Test/ java Test
+
+13a. what is class?
+Answer 13a. A class is a group of objects which have common properties. it is a template or blueprint from which objects are created.
+
 14. What is Enum?
-15. what is polymorphism?
+Answer 14. An Enum is a special "class" that represents a group of constants (unchangeable variables,like final variables).
+
+enum Level{
+LOW,
+MEDIUM,
+HIGH
+}
+
+Level myVar=Level.MEDIUM;
+note: Enum is short for enumerations which means specifically listed.
+
+  public static void main(String[] args) {
+    Level myVar = Level.MEDIUM; 
+    System.out.println(myVar);
+  }
+}
+output: MEDIUM
+
+Enum in a swithch Statement
+
+enum Level {
+  LOW,
+  MEDIUM,
+  HIGH
+}
+
+public class Main {
+  public static void main(String[] args) {
+    Level myVar = Level.MEDIUM;
+
+    switch(myVar) {
+      case LOW:
+        System.out.println("Low level");
+        break;
+      case MEDIUM:
+         System.out.println("Medium level");
+        break;
+      case HIGH:
+        System.out.println("High level");
+        break;
+    }
+  }
+}
+
+output: Medium Level
+
+Loop Through an Enum
+======================
+the enum type has a value() method, which returns an array  of all enum constants. This method is useful when you want to loop through the constants of an enum:
+
+for(Level myVar : Level.values()){
+System.out.println(myVar):
+}
+
+output:
+LOW
+MEDIUM
+HIGH
+
+14a. Difference Between Enums and Classes
+An enum can, just like a class, have attributes and methods. The only difference is that enum constants are public, static and final (unchangeable - cannot be overridden).
+
+An enum cannot be used to create objects, and it cannot extend other classes (but it can implement interfaces).
+
+15. what is Interface and polymorphism?
+Answer 15. 
+Interface
+===========>The interface in Java is a mechanism to achieve abstraction. There can be only abstract methods in the Java interface, not method body. It is used to achieve abstraction and multiple inheritance in Java.
+
+It cannot be instantiated just like the abstract class./ or we can not make the object of interface
+
+Since Java 8, we can have default and static methods in an interface.
+
+Since Java 9, we can have private methods in an interface.
+
+15a. Why we use java interface?
+Answer 15a.
+1. it is used to achieve abstraction.
+2. we can support the functionality of multiple inheritance.
+3. it can be used to achieve loose coupling.
+
+15b. what is marker or tagged interface?
+answer 15b. An interface which has no member is known as a marker or tagged interface, for example, Serializable, Cloneable, Remote, etc.
+
+public interface Serializable{
+}
+Note: nested interface is possible
+interface printTable{
+void print();
+interface MessagePrintable{
+void msg();
+}
+}
+
+
 16. what is super keyword?
+Answer 16. The super keyword in Java is a reference variable which is used to refer immediate parent class object.
+
+Whenever you create the instance of subclass, an instance of parent class is created implicitly which is referred by super reference variable.
+Usage of Usper Keyword
+=======================>
+1. Super can be used to refer immediate parent class instance variable.
+2. super can be used to invoke immediate parent class method.
+3. super() can be used to invoke immediate parent class constructor.
+
+Case1. class Animal{  
+String color="white";  
+}  
+class Dog extends Animal{  
+String color="black";  
+void printColor(){  
+System.out.println(color);//prints color of Dog class  
+System.out.println(super.color);//prints color of Animal class  
+}  
+}  
+class TestSuper1{  
+public static void main(String args[]){  
+Dog d=new Dog();  
+d.printColor();  
+}}  
+
+output: black , white
+
+case2: class Animal{  
+void eat(){System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+void eat(){System.out.println("eating bread...");}  
+void bark(){System.out.println("barking...");}  
+void work(){  
+super.eat();  
+bark();  
+}  
+}  
+class TestSuper2{  
+public static void main(String args[]){  
+Dog d=new Dog();  
+d.work();  
+}}  
+
+output: eating..
+barking.....
+
+Case3: class Animal{  
+Animal(){System.out.println("animal is created");}  
+}  
+class Dog extends Animal{  
+Dog(){  
+super();  
+System.out.println("dog is created");  
+}  
+}  
+class TestSuper3{  
+public static void main(String args[]){  
+Dog d=new Dog();  
+}}  
+
+output: 
+animal is created
+dog is created
+
 17. what is constructor?
+Answer 17. In Java, a constructor is a block of codes similar to the method. It is called when an instance of the class is created. At the time of calling constructor, memory for the object is allocated in the memory.
+
+Note: ava compiler provides a default constructor by default.
+
+There are two types of constructors in Java: no-arg constructor, and parameterized constructor.
+
+Remark: A java constructor cannot be abstract static final and synchronized buyt it could be private protected pubic or default 
+
+17a what is the purpose of a default constructor?
+answer 17a. the default constructor is used to provide the default values ot the objects like 0, null etc depending on the types.
+
+
 18. what is this keyword?
+Answer 18. 
 19. what is checked and unchecked exception?
 20. Differece Between Equals and == method?
 21. What is Orm?
