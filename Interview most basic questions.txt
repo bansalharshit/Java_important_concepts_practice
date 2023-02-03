@@ -9,6 +9,48 @@ features of java programming language
 
 2.Object-Oriented: Java follows the object-oriented paradigm which allows us to maintain our code as the combination of different type of objects that incorporates both data and behavior.
 
+2a what is object?
+answer2 an object i an instance of a class. an object is a real-world entity which has state and behavior.
+
+2b. what is instance variable?
+answer 2b. a variable which is created inside the class but outside the method is known as instance varibale. instance variable doesn't get memory at complile time. it gets memory at runtime when an object or instance is created. that is why it is known as an instance variable.
+
+2c. what is Method>
+answer2c in java a method is like a function which is used to expose the behavior of an object.
+advantage of method
+====================
+1. code reusability
+2. code optimization.
+
+2d. what is new keyword?
+answer 2d. the new keyword is used to allocate memory at runtime all objects get memory in heap memory area.
+
+2e. what are wrapper classes?
+answer 2e. The wrapper class in Java provides the mechanism to convert primitive into object and object into primitive.
+
+2f.autoboxing and autounboxing
+==============================
+
+Since J2SE 5.0, autoboxing and unboxing feature convert primitives into objects and objects into primitives automatically. The automatic conversion of primitive into an object is known as autoboxing and vice-versa unboxing.
+
+2g. what are datatypes?
+answer 2g. Data types specify the different sizes and values that can be stored in the variable. There are two types of data types in Java:
+
+* Primitive data types:boolean, char, byte, short, int, long, float and double.
+
+* Non-primitive data types: Classes, Interfaces, and Arrays.
+
+datatypes and their sizes
+============================
+boolean--> 1bit
+byte---> 8bit  -128 to 127(inclusive) and default is 0
+char----> 2 byte
+short----> 2 byte   -32768 to 32767 default is 0
+int-------> 4 byte
+long----> 8byte
+float---->4 byte  flaot f1=234.5f
+double----> 8byte  double d1=12.3
+
 3. Portable: Java supports read-once-write-anywhere approach. We can execute the Java program on every machine. Java program (.java) is converted to bytecode (.class) which can be easily run on every machine.
 
 4. Platform Independent: Java is a platform independent programming language. It is different from other programming languages like C and C++ which needs a platform to be executed. Java comes with its platform on which its code is executed. Java doesn't depend upon the operating system to be executed.
@@ -561,8 +603,10 @@ Answer 18.
 44. whai is postman?
 45. what is client server model?
 46. how many ways are there to create Spring boot Application?
-47. What is DBMS?
-48. What is RDBMS?
+47. What are Data and Database?
+Answer 47a Data--> it is a collection of raw and isolated facts.
+information--> it is 
+48. What are DBMS and RDBMS?
 49. what is normalization?
 50. Acid Properties in DBMS?
 51. Spring Version and which version are you currently using?
