@@ -1,4 +1,4 @@
-Java Theory Based Question 
+ Java Theory Based Question 
 ==============================
 1. What is Java?
 Answer 1. Java is the high-level, object-oriented, robust, secure programming language, platform-independent, high performance, Multithreaded, and portable programming language. It was developed by James Gosling in may 1995. It can also be known as the platform as it provides its own JRE and API.
@@ -607,7 +607,7 @@ Answer 19.
 46. how many ways are there to create Spring boot Application?
 47. What are Data and Database?
 Answer 47a Data--> it is a collection of raw and isolated facts.
-information--> it is 
+information--> it is organised way of data in understadable meaning. 
 48. What are DBMS and RDBMS?
 49. what is normalization?
 50. Acid Properties in DBMS?
@@ -671,8 +671,85 @@ Note: in java we can group multiple object as a single object by using either by
 
 Note: collection belongs to java.util package.
 
+67. what is sql?
+answer 67.sql stands for structured query language. sql language is a collection of predefined commands.
+like DDL(data defination language)(create,alter,drop,truncate,rename)
+2.DML(data manipulation language) (insert,update and delete)
+3.DRL(data retrival language)(select)
+4.TCL(Transaction control language)
+5.DCL(decision control language) (grant revoke)
+
+Question:DDL Commands Information
+1. Rename--> rename table student to students;
+ alter-it is used to change the structure of the existing talble.
+four sub command of alter
+=====================
+a.add
+b.modify
+c.drop
+d.change
+
+a. add-->alter table student add address varchar(28);
+this will add the column to the existing table.
+b.modify-->it is used to change the column datatype of column size.
+alter table student modify address varchar(20).
+c.drop--> alter table student drop column address;
+d. change--> alter table student change name sname varchar(12);
+
+* to Drop entire Table
+=======================>
+drop table student;
+note: DDL command can not be rolled back like drop command is ddl command.
+
+*truncate: this command is used to remove all the records of your talbe permanently can not be rolled back.
+
+example: truncate table student;
+
+Rename command
+==================>
+rename table student to students;
+
+DML Command
+==============>
+1.Insert-> insert into student values(10,'single qoute',800);
+insert partial insertion--> insert into student(roll,name) values(15,'rohan');
+note:duplicate records are allowed here.
+
+2.update->update student set marks=marks+50;
+( working on every record)
+update student set marks =marks+30 where roll=12;
+
+how to deal with null
+=======================>
+update student set name='harshit' where marks is null;
+
+3.Delete command--> this delete command we can rollback where as truncate command can not be rollback.
+
+delete from student where name='harshit';
+
+DRL(data Retrival Language)
+=============================>
+syntax: 
+select col1,col2,..
+from tablename
+where condition
+[groupby colname]
+having condition
+orderby colname[asc/desc]
+
+Note: orderby is used to sort the record according to asc/desc
+
+operators
+============
+1.Arithmatic operator(*,/,+,-,%) use after select statement and remaning operator after where clause only
+2.Relational operator(=><<=>=[!= or <>])
+3.logical operator (AND OR NOT)
+4.Specia operator(between, isnull isnotnull, like not like,in notin);
+select * from student where marks in(800,500,700);
+
 2. DSA Question Asked in interview
 ======================================
+
 1. Prime Number Program- all types
 2. reverse words in String
 3. palindrome program 
