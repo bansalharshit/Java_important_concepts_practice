@@ -10,7 +10,7 @@ features of java programming language
 2.Object-Oriented: Java follows the object-oriented paradigm which allows us to maintain our code as the combination of different type of objects that incorporates both data and behavior.
 
 2a what is object?
-answer2 an object i an instance of a class. an object is a real-world entity which has state and behavior.
+answer2 an object is an instance of a class. an object is a real-world entity which has state and behavior.
 
 2b. what is instance variable?
 answer 2b. a variable which is created inside the class but outside the method is known as instance varibale. instance variable doesn't get memory at complile time. it gets memory at runtime when an object or instance is created. that is why it is known as an instance variable.
@@ -195,7 +195,6 @@ HeapMemory/HeapSapce
 9.Exception Throws: Jvm throws the java.lang.OutOfMemoryError(if the jvm is unable to create a new native method);
 
 9. what is String Pool?
-
 Anser9. String pool is nothing but a storage area in Java heap where string literals stores. It is also known as String Intern Pool or String Constant Pool.
 
 Whenever we create a string the string object occupies some space in the heap memory. Creating a number of strings may increase the cost and memory too which may reduce the performance also.
@@ -361,7 +360,7 @@ The Java Bean class is the example of a fully encapsulated class.
 Advantage of Encapsulation
 ===========================>
 1. way to achieve "Data Hiding" in java because other class will not be able to access the data through the private data members.
- 2. the encapsulate class is eays to test. so it is better in unit testing.
+ 2. the encapsulate class is easy to test. so it is better in unit testing.
 
 //A Java class which is a fully encapsulated class.  
 //It has a private data member and getter and setter methods.  
@@ -561,21 +560,24 @@ animal is created
 dog is created
 
 17. what is constructor?
+
 Answer 17. In Java, a constructor is a block of codes similar to the method. It is called when an instance of the class is created. At the time of calling constructor, memory for the object is allocated in the memory.
 
-Note: ava compiler provides a default constructor by default.
+Note: java compiler provides a default constructor by default.
 
 There are two types of constructors in Java: no-arg constructor, and parameterized constructor.
 
-Remark: A java constructor cannot be abstract static final and synchronized buyt it could be private protected pubic or default 
+Remark: A java constructor cannot be abstract static final and synchronized but it could be private protected pubic or default 
 
 17a what is the purpose of a default constructor?
-answer 17a. the default constructor is used to provide the default values ot the objects like 0, null etc depending on the types.
+answer 17a. the default constructor is used to provide the default values to the objects like 0, null etc depending on the types.
 
 
 18. what is this keyword?
-Answer 18. 
+Answer 18. this is a referece variable that refers to the current object. used to invoke current class method,constructor.
+
 19. what is checked and unchecked exception?
+Answer 19. 
 20. Differece Between Equals and == method?
 21. What is Orm?
 22. what is jdbc?
@@ -614,17 +616,60 @@ information--> it is
 53. What is RestApi?
 54. All the Dependencies In Pom.xml File and its uses?
 55. What is serialization and decerialization?
-56. What is Thread?
+answer 55. 
+56. What is Thread and process?
+answer 56.
 57. What is MultiThreading?
 58. life cycle of multithreading?
 59. Expalin the Hiriericy of Collections?
+
+answer 59. java.lang.iterable(Interface)---->collection(Interface)--->List(interface),Set(Interface)and Queue(Interface)
+
+again List(Interface)-->Arraylist(class),Linked(Listclass),Vector(class)-->Stack(class)
+
+again Set(Interface)-->[HashSet(class)-->LinkedHashSet(class)],[SortedSet(Interface)-->TreeSet(class)
+
+again Queue(Interface)-->PriorityQueue(class),Deque(Interface)-->ArrayDeque(Class)
+
+Note: from the java 1.5 version onwards LinkedList class also implements the Deque interface. 
+
+The Iterable Interface:
+========================
+This is the root interface for the entire collection framework. The collection interface
+extends the Iterable interface. Therefore, inherently, all the interfaces and classes
+implement this interface. The main functionality of this interface is provides the facility of
+iterating the elements in a forward direction only. This interface contains only one
+abstract method which is the iterator
+
+public Iterator<T> iterator();
+it returns the iterator over the elements of type T.
+
+
+Method inside the Iterator Inteface:
+====================================
+1.public boolean hasNext(); it returns true if the iterator has more elements otherwise it returns false;
+
+2.public Object next();it return the element and moves the cursor pointer to the next element.
+
+3. public void remove(): it removes the elements from the iterator.
+
 60. What is colelctions framework?
+Answer 60 Collection Framework defines several predefined classes and interface which can be used to represent group of object as single object.
 61. What is the Differnce Between Array and ArrayList?
 62. What is Set?
 63. What is Treeset and hashset?
-64. What is an stack and queue datastructrue?
+64. What is an stack and queue data structrue?
 65. what is an array?
 66. what is an linked list?
+66. difference between array and collection?
+answer 66.
+1. Array are having fixed size and allow only homonoeneous elements but in case of collection hetrogenous are also allowed. in case of array we want to add the element over its size then jvm will raise an exception like ArrayIndexOutOfBoundException where as Collections are having dynamically growable nature.
+
+2. array does not have predefined methods to perform searching and sorting orperations over the elements but in collection we have predefined methods to perform searching and sorting operations.
+
+Note: in java we can group multiple object as a single object by using either by collections or by using Map also.
+
+Note: collection belongs to java.util package.
 
 2. DSA Question Asked in interview
 ======================================
