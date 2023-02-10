@@ -23,7 +23,7 @@ advantage of method
 2. code optimization.
 
 2d. what is new keyword?
-answer 2d. the new keyword is used to allocate memory at runtime all objects get memory in heap memory area.
+answer 2d. the new keyword is used to allocate memory at runtime, all objects get memory in heap memory area.
 
 2e. what are wrapper classes?
 answer 2e. The wrapper class in Java provides the mechanism to convert primitive into object and object into primitive.
@@ -31,7 +31,7 @@ answer 2e. The wrapper class in Java provides the mechanism to convert primitive
 2f.autoboxing and autounboxing
 ==============================
 
-Since J2SE 5.0, autoboxing and unboxing feature convert primitives into objects and objects into primitives automatically. The automatic conversion of primitive into an object is known as autoboxing and vice-versa unboxing.
+Since J2SE 5.0, boxing and unboxing feature convert primitives into objects and objects into primitives automatically. The automatic conversion of primitive into an object is known as autoboxing and vice-versa autounboxing.
 
 2g. what are datatypes?
 answer 2g. Data types specify the different sizes and values that can be stored in the variable. There are two types of data types in Java:
@@ -122,7 +122,7 @@ output:-> HelloWorld
 5. can we override the static Method?
 Anser 5.No, we can not override the static Method because method overriding is based on dynamic binding at runtime and the static methods are bonded using static binding at compile time. So, we cannot override static methods.
 
-5a. what is static Method
+5a. what is static Method ?
 answer5a. The method that has a static keyword before the method name is known as a static method. It is also known as a class-level method. A copy of the static method is shared by all the objects of the class.The static method cannot access instance variables or methods.
 
 5b. why static method can not call the non-static method or non-static  variable?
